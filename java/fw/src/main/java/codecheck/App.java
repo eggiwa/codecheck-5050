@@ -22,9 +22,10 @@ public class App {
 
 		while(true){
 
-			try {
-				for(int i=0;i<2;i++){
 
+			for(int i=0;i<2;i++){
+
+				try {
 					// System.out.println("exec : " + Arrays.toString(argsOperation1));
 
 					ProcessBuilder pb = new ProcessBuilder(argsOperation1);
@@ -34,6 +35,11 @@ public class App {
 							new BufferedReader(new InputStreamReader(process.getInputStream()));
 
 					int ret = process.waitFor();
+					if(ret != 0){
+						System.out.print(i==0 ? "FIRST (" : "SECOND (NG): ");
+						return;
+					}
+
 					String out = reader.readLine();
 
 					Boolean judge = out.length() > 0 ? out.charAt(0) == argsOperation1[1].charAt(argsOperation1[1].length()-1) : false;
@@ -52,12 +58,13 @@ public class App {
 
 					// System.out.println(Arrays.toString(argsOperation1));
 
+				} catch (IOException | InterruptedException e) {
+					// System.out.println("exception");
+					// e.printStackTrace();
+					// return;
+					continue;
 				}
 
-			} catch (IOException | InterruptedException e) {
-				System.out.println("exception");
-				e.printStackTrace();
-				return;
 			}
 
 		}
