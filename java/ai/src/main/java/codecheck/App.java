@@ -6,6 +6,10 @@ import java.util.Arrays;
 public class App {
 	public static void main(String[] args) {
 
+		if(args.length<1){
+			System.out.println("");
+			return;
+		}
 		ArrayList<String> list = new ArrayList<String>();
 		list.addAll(Arrays.asList(args));
 
