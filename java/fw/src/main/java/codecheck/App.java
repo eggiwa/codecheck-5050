@@ -15,15 +15,11 @@ public class App {
 
 		// System.out.println("args... " + (Arrays.toString(args)));
 
-//		if (args.length < 3){
-			System.out.println("引数");
-//			return;
-//		} else {
-			ArrayList<String> operation1 = new ArrayList<String>();
-			operation1.addAll(Arrays.asList(args));
-			operation1.remove(1);
-			String[] argsOperation1 = operation1.toArray(new String[operation1.size()]);
-//		}
+		ArrayList<String> operation1 = new ArrayList<String>();
+		operation1.addAll(Arrays.asList(args));
+		operation1.remove(1);
+		String[] argsOperation1 = operation1.toArray(new String[operation1.size()]);
+
 		while(true){
 
 
@@ -39,7 +35,6 @@ public class App {
 							new BufferedReader(new InputStreamReader(process.getInputStream()));
 
 					int ret = process.waitFor();
-					System.out.println(ret);
 					if(ret != 0){
 						System.out.print(i==0 ? "FIRST (" : "SECOND (NG): ");
 						return;
