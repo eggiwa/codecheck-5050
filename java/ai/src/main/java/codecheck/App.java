@@ -9,8 +9,9 @@ public class App {
 //		try {
 
 		if(args.length <= 1){
-			System.out.println("exception");
-			return;
+//			System.out.println("exception");
+			throw new IllegalArgumentException();
+//			return;
 		}
 
 		ArrayList<String> list = new ArrayList<String>();
