@@ -8,7 +8,7 @@ public class App {
 
 //		try {
 
-		if(args.length <= 1){
+		if(args.length < 1){
 //			System.out.println("exception");
 			throw new IllegalArgumentException();
 //			return;
