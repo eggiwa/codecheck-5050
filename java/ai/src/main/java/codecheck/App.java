@@ -6,9 +6,9 @@ import java.util.Arrays;
 public class App {
 	public static void main(String[] args) {
 
-		// try {
+//		try {
 
-		if(args.length < 1){
+		if(args.length <= 1){
 			System.out.println("exception");
 			return;
 		}
@@ -32,9 +32,10 @@ public class App {
 		System.out.println("");
 		return;
 
-		// } catch (Exception e){
-		// 	return;
-		// }
+//		} catch (Exception e){
+//			System.out.println("exception");
+//		 	return;
+//		}
 
 
 	}
