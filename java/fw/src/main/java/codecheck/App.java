@@ -12,14 +12,18 @@ import java.lang.Integer;
 public class App {
 
 	public static void main(String[] args) {
-
-		// System.out.println("args... " + (Arrays.toString(args)));
-
 		ArrayList<String> operation1 = new ArrayList<String>();
-		operation1.addAll(Arrays.asList(args));
-		operation1.remove(1);
-		String[] argsOperation1 = operation1.toArray(new String[operation1.size()]);
+		// System.out.println("args... " + (Arrays.toString(args)));
+		try {
 
+			operation1.addAll(Arrays.asList(args));
+			operation1.remove(1);
+
+		}catch(Exception e){
+			System.out.println("exception");
+
+		}
+		String[] argsOperation1 = operation1.toArray(new String[operation1.size()]);
 		while(true){
 
 
@@ -58,11 +62,10 @@ public class App {
 
 					// System.out.println(Arrays.toString(argsOperation1));
 
-				} catch (IOException | InterruptedException e) {
-					// System.out.println("exception");
+				} catch (IOException | InterruptedException | RuntimeException e) {
+					 System.out.println("exception");
 					// e.printStackTrace();
-					// return;
-					continue;
+					return;
 				}
 
 			}
