@@ -1,17 +1,13 @@
 package codecheck;
-import java.util.Random;
-import java.util.ArrayList;
-import java.util.Arrays;
+
+import java.util.*;
 
 public class App {
 	public static void main(String[] args) {
 
-//		try {
 
 		if(args.length < 1){
-//			System.out.println("exception");
 			throw new IllegalArgumentException();
-//			return;
 		}
 
 		ArrayList<String> list = new ArrayList<String>();
@@ -21,6 +17,7 @@ public class App {
 			System.out.println("");
 			return;
 		}
+
 		String target = list.remove(0);
 
 		for(String s : list) {
@@ -32,12 +29,5 @@ public class App {
 
 		System.out.println("");
 		return;
-
-//		} catch (Exception e){
-//			System.out.println("exception");
-//		 	return;
-//		}
-
-
 	}
 }
