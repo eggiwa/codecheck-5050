@@ -9,7 +9,7 @@ public class App {
 		// try {
 
 		if(args.length < 1){
-			System.out.println("");
+			System.out.println("exception");
 			return;
 		}
 
